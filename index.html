@@ -8,13 +8,40 @@
         <title>Daily Dose of Dog Inspo</title>
 
         <style>
+            .container {
+                height: 100px;
+                position: relative;
+            }
+            
+            .center {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            #dog-call {
+                text-align: center;
+                font-size: 20px;
+                background-color: white;
+            }
 
         </style>
 
     </head>
 
     <body>
-        <h1>Where my dogs at??</h1>
+        <div class="container">
+            <div class="center">
+                <button type="button" id="dog-call">Where my dogs at??</button>
+            </div>
+        </div>
+        
+        <div class="dog-photo">
+
+        </div>
     </body>
 
 </html>
