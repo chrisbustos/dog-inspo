@@ -7,6 +7,31 @@
 
         <title>Daily Dose of Dog Inspo</title>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript">
+    
+        var keyword = "cute dog";
+    
+        $(document).ready(function(){
+    
+            $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+            {
+                tags: keyword,
+                tagmode: "any",
+                format: "json"
+            },
+            function(data) {
+                var rnd = Math.floor(Math.random() * data.items.length);
+    
+                var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
+    
+                document.getElementById('dog-photo').style.backgroundImage="url('" + image_src + "')";
+    
+            });
+    
+        });
+        </script>
+
         <style>
             .container {
                 height: 100px;
@@ -28,6 +53,13 @@
                 background-color: white;
             }
 
+            #dog-photo {
+                height: 500px;
+                position: relative;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
         </style>
 
     </head>
@@ -35,11 +67,11 @@
     <body>
         <div class="container">
             <div class="center">
-                <button type="button" id="dog-call">Where my dogs at??</button>
+                <button type="button" id="dog-call" onclick="function()">Where my dogs at??</button>
             </div>
         </div>
         
-        <div class="dog-photo">
+        <div id="dog-photo">
 
         </div>
     </body>
