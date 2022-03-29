@@ -14,7 +14,7 @@
     
         $(document).ready(function(){
     
-            $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+            $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
             {
                 tags: keyword,
                 tagmode: "any",
@@ -29,7 +29,7 @@
     
             });
             $("button").click(function(){
-            $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+            $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
             {
                 tags: keyword,
                 tagmode: "any",
@@ -66,7 +66,7 @@
 
             #dog-call {
                 text-align: center;
-                font-size: 20px;
+                font-size: 40px;
                 background-color: white;
             }
 
